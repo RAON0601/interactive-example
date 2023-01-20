@@ -10,7 +10,7 @@ type BackGroundProps = {
 
 const StyledBackground = styled.div<BackGroundProps>`
   height: 100vh;
-  background: ${(props) => {
+  background-image: ${(props) => {
     const { gradientStart, gradientEnd, hue } = props;
     if (gradientStart && gradientEnd && hue) {
       return `linear-gradient(${hue}deg, ${gradientStart}, ${gradientEnd})`;
