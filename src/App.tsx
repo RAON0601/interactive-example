@@ -1,13 +1,14 @@
 import React from "react";
-import styled from "styled-components";
-
-const Text = styled.div`
-  font-weight: bold;
-  color: red;
-`;
+import { Reset } from "styled-reset";
+import Roullete from "./page/roullete";
 
 function App() {
-  return <Text>하이</Text>;
+  return (
+    <React.Fragment>
+      <Reset />
+      <Roullete />
+    </React.Fragment>
+  );
 }
 
 export default App;
