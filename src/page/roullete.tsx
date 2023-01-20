@@ -9,9 +9,7 @@ function Roullete() {
   const [imageDeg, setImageDeg] = useState<number>(0);
 
   const onRoulleteStart = () => {
-    console.log("start click");
     const nextDeg = Math.round(Math.random() * 720);
-    console.log(`nextDeg:${nextDeg}`);
     setImageDeg(nextDeg);
   };
 
