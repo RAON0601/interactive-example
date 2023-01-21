@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import GradientBackGround from "../components/BackGround";
 import Button from "../components/Button";
 import ButtonGroup from "../components/ButtonGroup";
-import RotateImage from "../components/RotateImage";
+import Image from "../components/Image";
 import Title from "../components/Title";
 
 function Roullete() {
@@ -30,14 +30,15 @@ function Roullete() {
         <Button onClick={onDegReset}>초기화</Button>
       </ButtonGroup>
 
-      <RotateImage
+      <Image
         src="/images/soju.png"
-        deg={imageDeg}
         alt="이미지"
         style={{
           position: "fixed",
           top: "50%",
           left: "50%",
+          transition: `transform 2s cubic-bezier(1, -0.01, 0.175, 0.97)`,
+          transform: `translate(-50%, -50%) rotate(${imageDeg}deg)`,
         }}
       />
     </GradientBackGround>
