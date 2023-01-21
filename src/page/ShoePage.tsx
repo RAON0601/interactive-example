@@ -5,7 +5,6 @@ import ShoeInfo from "../components/ShoeInfo";
 import ImageWrapper from "../components/ImageWrapper";
 import { Point, PointerWrapper } from "../components/PointerPageNation";
 import { throttle } from "../utils/throttle";
-import { doOnce } from "../utils/doOnce";
 import { debounce } from "../utils/debounce";
 
 function ShoePage() {
@@ -53,6 +52,7 @@ function ShoePage() {
 
   const changePage = debounce((pageNumber: number) => {
     const sections = sectionRefs.current;
+
     selectPage(pageNumber);
     window.scrollTo({
       top: sections[pageNumber].offsetTop,
