@@ -4,6 +4,7 @@ import Image from "../components/Image";
 import ShoeInfo from "../components/ShoeInfo";
 import ImageWrapper from "../components/ImageWrapper";
 import { Point, PointerWrapper } from "../components/PointerPageNation";
+import { throttle } from "../utils/throttle";
 
 function ShoePage() {
   const showInfos = [
@@ -94,15 +95,13 @@ function ShoePage() {
   };
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      window.addEventListener("scroll", handleScroll);
-    }, 100);
+    const throtaleHandler = throttle(handleScroll);
+    window.addEventListener("scroll", throtaleHandler);
 
     return () => {
-      clearInterval(timer);
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", throtaleHandler);
     };
-  }, []);
+  });
 
   return (
     <>
