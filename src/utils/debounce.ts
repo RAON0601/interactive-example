@@ -1,9 +1,9 @@
-export const debounce = (cb: any, limit = 100) => {
+export const debounce = (cb: Function, limit = 100) => {
   let timeout: any;
-  return () => {
+  return (...args: any) => {
     clearTimeout(timeout);
     timeout = setTimeout(() => {
-      cb();
+      cb(args);
     }, limit);
   };
 };

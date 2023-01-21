@@ -1,4 +1,4 @@
-export const throttle = (cb: any, limit = 100) => {
+export const throttle = (cb: Function, limit = 100) => {
   let wating = false;
   return () => {
     if (!wating) {
