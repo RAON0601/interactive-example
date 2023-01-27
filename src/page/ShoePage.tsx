@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import PageSection from "../components/PageSection";
 import Image from "../components/Image";
 import ShoeInfo from "../components/ShoeInfo";
